@@ -1,13 +1,15 @@
 import sys
 from tdl.queue.queue_based_implementation_runner import QueueBasedImplementationRunnerBuilder
 from tdl.runner.challenge_session import ChallengeSession
+
 from solutions.SUM import sum_solution
 from solutions.HLO import hello_solution
-from solutions.ARRS import array_sum
-from solutions.IRNG import int_range
 from solutions.FIZ import fizz_buzz_solution
 from solutions.CHK import checkout_solution
-from solutions.CHL import checklite_solution
+from solutions.DMO import demo_round1_solution
+from solutions.DMO import demo_round2_solution
+from solutions.DMO.demo_round3_solution import DemoRound3Solution
+from solutions.DMO import demo_round4n5_solution
 from runner.utils import Utils
 from runner.user_input_action import get_user_input
 
@@ -55,15 +57,25 @@ from runner.user_input_action import get_user_input
  
 """
 
+demo_round3_solution = DemoRound3Solution()
+
 runner = QueueBasedImplementationRunnerBuilder()\
     .set_config(Utils.get_runner_config())\
     .with_solution_for('sum', sum_solution.compute)\
     .with_solution_for('hello', hello_solution.hello)\
-    .with_solution_for('array_sum', array_sum.compute)\
-    .with_solution_for('int_range', int_range.generate)\
     .with_solution_for('fizz_buzz', fizz_buzz_solution.fizz_buzz)\
     .with_solution_for('checkout', checkout_solution.checkout)\
-    .with_solution_for('checklite', checklite_solution.checklite)\
+    .with_solution_for('increment', demo_round1_solution.increment)\
+    .with_solution_for('to_uppercase', demo_round1_solution.to_uppercase)\
+    .with_solution_for('letter_to_santa', demo_round1_solution.letter_to_santa)\
+    .with_solution_for('count_lines', demo_round1_solution.count_lines)\
+    .with_solution_for('array_sum', demo_round2_solution.array_sum)\
+    .with_solution_for('int_range', demo_round2_solution.int_range)\
+    .with_solution_for('filter_pass', demo_round2_solution.filter_pass)\
+    .with_solution_for('inventory_add', demo_round3_solution.inventory_add)\
+    .with_solution_for('inventory_size', demo_round3_solution.inventory_size)\
+    .with_solution_for('inventory_get', demo_round3_solution.inventory_get)\
+    .with_solution_for('waves', demo_round4n5_solution.waves)\
     .create()
 
 ChallengeSession\
