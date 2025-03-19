@@ -9,6 +9,7 @@ from solutions.CHK import checkout_solution
 from solutions.DMO import demo_round1_solution
 from solutions.DMO import demo_round2_solution
 from solutions.DMO.demo_round3_solution import DemoRound3Solution
+from solutions.DMO import demo_round4n5_solution
 from runner.utils import Utils
 from runner.user_input_action import get_user_input
 
@@ -74,6 +75,7 @@ runner = QueueBasedImplementationRunnerBuilder()\
     .with_solution_for('inventory_add', demo_round3_solution.inventory_add)\
     .with_solution_for('inventory_size', demo_round3_solution.inventory_size)\
     .with_solution_for('inventory_get', demo_round3_solution.inventory_get)\
+    .with_solution_for('waves', demo_round4n5_solution.waves)\
     .create()
 
 ChallengeSession\
