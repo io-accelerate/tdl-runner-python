@@ -1,12 +1,14 @@
 import sys
 from tdl.queue.queue_based_implementation_runner import QueueBasedImplementationRunnerBuilder
 from tdl.runner.challenge_session import ChallengeSession
+
 from solutions.SUM import sum_solution
 from solutions.HLO import hello_solution
 from solutions.FIZ import fizz_buzz_solution
 from solutions.CHK import checkout_solution
 from solutions.DMO import demo_round1_solution
 from solutions.DMO import demo_round2_solution
+from solutions.DMO.demo_round3_solution import DemoRound3Solution
 from runner.utils import Utils
 from runner.user_input_action import get_user_input
 
@@ -54,6 +56,8 @@ from runner.user_input_action import get_user_input
  
 """
 
+demo_round3_solution = DemoRound3Solution()
+
 runner = QueueBasedImplementationRunnerBuilder()\
     .set_config(Utils.get_runner_config())\
     .with_solution_for('sum', sum_solution.compute)\
@@ -67,6 +71,9 @@ runner = QueueBasedImplementationRunnerBuilder()\
     .with_solution_for('array_sum', demo_round2_solution.array_sum)\
     .with_solution_for('int_range', demo_round2_solution.int_range)\
     .with_solution_for('filter_pass', demo_round2_solution.filter_pass)\
+    .with_solution_for('inventory_add', demo_round3_solution.inventory_add)\
+    .with_solution_for('inventory_size', demo_round3_solution.inventory_size)\
+    .with_solution_for('inventory_get', demo_round3_solution.inventory_get)\
     .create()
 
 ChallengeSession\
