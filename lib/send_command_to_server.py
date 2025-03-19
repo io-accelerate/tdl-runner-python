@@ -5,6 +5,7 @@ from solutions.SUM import sum_solution
 from solutions.HLO import hello_solution
 from solutions.FIZ import fizz_buzz_solution
 from solutions.CHK import checkout_solution
+from solutions.DMO import demo_round1_solution
 from runner.utils import Utils
 from runner.user_input_action import get_user_input
 
@@ -58,6 +59,10 @@ runner = QueueBasedImplementationRunnerBuilder()\
     .with_solution_for('hello', hello_solution.hello)\
     .with_solution_for('fizz_buzz', fizz_buzz_solution.fizz_buzz)\
     .with_solution_for('checkout', checkout_solution.checkout)\
+    .with_solution_for('increment', demo_round1_solution.increment)\
+    .with_solution_for('to_uppercase', demo_round1_solution.to_uppercase)\
+    .with_solution_for('letter_to_santa', demo_round1_solution.letter_to_santa)\
+    .with_solution_for('count_lines', demo_round1_solution.count_lines)\
     .create()
 
 ChallengeSession\
