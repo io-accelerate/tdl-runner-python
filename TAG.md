@@ -21,6 +21,7 @@ Commit all changes then:
 
 ```bash
 export RELEASE_TAG="v$(cat version.txt)"
+echo $RELEASE_TAG
 
 git add --all
 git commit -m "Releasing version ${RELEASE_TAG}"
