@@ -8,6 +8,8 @@ from solutions.DMO.demo_round3_solution import DemoRound3Solution
 from solutions.DMO.inventory_item import InventoryItem
 from solutions.DMO.demo_round4n5_solution import DemoRound4n5Solution
 
+from dataclasses import is_dataclass, asdict
+
 class EntryPointMapping:
     def __init__(self):
         self.sum_solution = SumSolution()
@@ -64,7 +66,11 @@ class EntryPointMapping:
         return self.demo_round3_solution.inventory_size()
 
     def inventory_get(self, *args):
-        return self.demo_round3_solution.inventory_get(*args)
+        response = self.demo_round3_solution.inventory_get(*args)
+        if is_dataclass(response):
+            # noinspection PyDataclass
+            return asdict(response)
+        return response
 
     # Round 4 & 5
     def waves(self, *args):
