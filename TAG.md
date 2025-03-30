@@ -8,7 +8,7 @@ Example:
 ```
 client version = 0.24.0
 patch version = 0
-runner version = 0.24.0.0
+runner version = 0. 24.0.0
 ```
 
 Update the runner version (0.X.Y.Z) in:

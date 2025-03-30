@@ -1,6 +1,6 @@
 
+class CheckoutSolution:
 
-# noinspection PyUnusedLocal
-# skus = unicode string
-def checkout(skus):
-    raise NotImplementedError()
+    # skus = unicode string
+    def checkout(self, skus):
+        raise NotImplementedError()

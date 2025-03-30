@@ -1,3 +1,5 @@
-# noinspection PyShadowingBuiltins,PyUnusedLocal
-def compute(x, y):
-    raise NotImplementedError()
+
+class SumSolution:
+    
+    def compute(self, x, y):
+        raise NotImplementedError()

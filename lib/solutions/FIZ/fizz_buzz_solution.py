@@ -1,3 +1,5 @@
-# noinspection PyUnusedLocal
-def fizz_buzz(number):
-    raise NotImplementedError()
+
+class FizzBuzzSolution:
+
+    def fizz_buzz(self, number):
+        raise NotImplementedError()

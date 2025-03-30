@@ -1,6 +1,6 @@
 
-
-# noinspection PyUnusedLocal
-# friend_name = unicode string
-def hello(friend_name):
-    raise NotImplementedError()
+class HelloSolution:
+    
+    # friend_name = unicode string
+    def hello(self, friend_name):
+        raise NotImplementedError()
