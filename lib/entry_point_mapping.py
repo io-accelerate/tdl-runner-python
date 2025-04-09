@@ -2,6 +2,7 @@ from solutions.SUM.sum_solution import SumSolution
 from solutions.HLO.hello_solution import HelloSolution
 from solutions.FIZ.fizz_buzz_solution import FizzBuzzSolution
 from solutions.CHK.checkout_solution import CheckoutSolution
+from solutions.RBT.rabbit_hole_solution import RabbitHoleSolution
 from solutions.DMO.demo_round1_solution import DemoRound1Solution
 from solutions.DMO.demo_round2_solution import DemoRound2Solution
 from solutions.DMO.demo_round3_solution import DemoRound3Solution
@@ -16,12 +17,14 @@ class EntryPointMapping:
         self.hello_solution = HelloSolution()
         self.fizz_buzz_solution = FizzBuzzSolution()
         self.checkout_solution = CheckoutSolution()
+        self.rabbit_hole_solution = RabbitHoleSolution()
         self.demo_round1_solution = DemoRound1Solution()
         self.demo_round2_solution = DemoRound2Solution()
         self.demo_round3_solution = DemoRound3Solution()
         self.demo_round4n5_solution = DemoRound4n5Solution()
 
-    # Round 0
+    # ~~~~~~~~ Single method challenges ~~~~~~
+    
     def sum(self, *args):
         return self.sum_solution.compute(*args)
 
@@ -34,7 +37,11 @@ class EntryPointMapping:
     def checkout(self, *args):
         return self.checkout_solution.checkout(*args)
 
-    # Round 1
+    def rabbit_hole(self, *args):
+        return self.rabbit_hole_solution.rabbit_hole(*args)
+
+    # ~~~~~~~~ Demo rounds ~~~~~~
+    
     def increment(self, *args):
         return self.demo_round1_solution.increment(*args)
 
