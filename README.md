@@ -12,5 +12,5 @@
 ## 2. How to start
 
 - Install dependencies `pip install -r requirements.txt`
-- Open `lib/send_command_to_server.py`
+- Open `lib/send_command_to_server.py` in your favorite IDE
 - Read the comments as documentation, they will guide through the rest of the setup
