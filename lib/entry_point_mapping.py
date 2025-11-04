@@ -3,6 +3,7 @@ from solutions.HLO.hello_solution import HelloSolution
 from solutions.FIZ.fizz_buzz_solution import FizzBuzzSolution
 from solutions.CHK.checkout_solution import CheckoutSolution
 from solutions.RBT.rabbit_hole_solution import RabbitHoleSolution
+from solutions.HOC.house_of_cards_solution import HouseOfCardsSolution
 from solutions.AMZ.amazing_solution import AmazingSolution
 from solutions.ULT.ultimate_solution import UltimateSolution
 from solutions.DMO.demo_round1_solution import DemoRound1Solution
@@ -20,6 +21,7 @@ class EntryPointMapping:
         self.fizz_buzz_solution = FizzBuzzSolution()
         self.checkout_solution = CheckoutSolution()
         self.rabbit_hole_solution = RabbitHoleSolution()
+        self.house_of_cards_solution = HouseOfCardsSolution()
         self.amazing_solution = AmazingSolution()
         self.ultimate_solution = UltimateSolution()
         self.demo_round1_solution = DemoRound1Solution()
@@ -43,6 +45,9 @@ class EntryPointMapping:
 
     def rabbit_hole(self, *args):
         return self.rabbit_hole_solution.rabbit_hole(*args)
+
+    def render_house(self, *args):
+        return self.house_of_cards_solution.render_house(*args)
 
     def amazing_maze(self, *args):
         return self.amazing_solution.amazing_maze(*args)
