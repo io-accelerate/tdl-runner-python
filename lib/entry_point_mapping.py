@@ -11,6 +11,7 @@ from solutions.DMO.demo_round2_solution import DemoRound2Solution
 from solutions.DMO.demo_round3_solution import DemoRound3Solution
 from solutions.DMO.inventory_item import InventoryItem
 from solutions.DMO.demo_round4n5_solution import DemoRound4n5Solution
+from solutions.IWC.queue_solution_entrypoint import QueueSolutionEntrypoint
 
 from dataclasses import is_dataclass, asdict
 
@@ -28,6 +29,7 @@ class EntryPointMapping:
         self.demo_round2_solution = DemoRound2Solution()
         self.demo_round3_solution = DemoRound3Solution()
         self.demo_round4n5_solution = DemoRound4n5Solution()
+        self.queue_solution_entrypoint = QueueSolutionEntrypoint()
 
     # ~~~~~~~~ Single method challenges ~~~~~~
     
@@ -54,6 +56,20 @@ class EntryPointMapping:
 
     def ultimate_maze(self, *args):
         return self.ultimate_solution.ultimate_maze(*args)
+
+    # ~~~~~~~~ IWC queue challenge ~~~~~~
+
+    def enqueue(self, task):
+        return self.queue_solution_entrypoint.enqueue(task)
+
+    def dequeue(self):
+        return self.queue_solution_entrypoint.dequeue()
+
+    def size(self):
+        return self.queue_solution_entrypoint.size()
+
+    def purge(self):
+        return self.queue_solution_entrypoint.purge()
 
     # ~~~~~~~~ Demo rounds ~~~~~~
     

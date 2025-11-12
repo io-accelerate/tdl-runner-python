@@ -73,6 +73,10 @@ runner = QueueBasedImplementationRunnerBuilder()\
     .with_solution_for('to_uppercase', entry_point_mapping.to_uppercase)\
     .with_solution_for('ultimate_maze', entry_point_mapping.ultimate_maze) \
     .with_solution_for('waves', entry_point_mapping.waves)\
+    .with_solution_for('enqueue', entry_point_mapping.enqueue) \
+    .with_solution_for('dequeue', entry_point_mapping.dequeue) \
+    .with_solution_for('size', entry_point_mapping.size) \
+    .with_solution_for('purge', entry_point_mapping.purge) \
     .create()
 
 ChallengeSession\
