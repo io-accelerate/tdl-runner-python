@@ -15,6 +15,8 @@ from solutions.IWC.queue_solution_entrypoint import QueueSolutionEntrypoint
 
 from dataclasses import is_dataclass, asdict
 
+from solutions.IWC.task_types import TaskSubmission
+
 class EntryPointMapping:
     def __init__(self):
         self.sum_solution = SumSolution()
@@ -60,10 +62,15 @@ class EntryPointMapping:
     # ~~~~~~~~ IWC queue challenge ~~~~~~
 
     def enqueue(self, task):
-        return self.queue_solution_entrypoint.enqueue(task)
+        task_submission = TaskSubmission(**task)
+        return self.queue_solution_entrypoint.enqueue(task_submission)
 
     def dequeue(self):
-        return self.queue_solution_entrypoint.dequeue()
+        response = self.queue_solution_entrypoint.dequeue()
+        if is_dataclass(response):
+            # noinspection PyDataclass
+            return asdict(response)
+        return response
 
     def size(self):
         return self.queue_solution_entrypoint.size()
