@@ -52,10 +52,23 @@ def call_dequeue() -> QueueActionBuilder:
 
 def run_queue(actions: Iterable[dict[str, Any]]) -> None:
     queue = QueueSolutionEntrypoint()
-    for step in actions:
+    for position, step in enumerate(actions, start=1):
         method: Callable[..., Any] = getattr(queue, step["name"])
         args = () if step["input"] is None else (step["input"],)
-        assert method(*args) == step["expect"]
+        actual = method(*args)
+        expected = step["expect"]
+        if actual != expected:
+            payload = step.get("input")
+            payload_repr = "" if payload is None else f" input={payload!r}"
+            raise AssertionError(
+                "Step {} '{}'{} expected {!r} but got {!r}".format(
+                    position,
+                    step["name"],
+                    payload_repr,
+                    expected,
+                    actual,
+                )
+            )
 
 
 __all__ = ["iso_ts", "call_enqueue", "call_size", "call_dequeue", "run_queue"]
