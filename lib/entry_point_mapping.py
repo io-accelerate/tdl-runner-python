@@ -75,6 +75,9 @@ class EntryPointMapping:
     def size(self):
         return self.queue_solution_entrypoint.size()
 
+    def age(self):
+        return self.queue_solution_entrypoint.age()
+
     def purge(self):
         return self.queue_solution_entrypoint.purge()
 

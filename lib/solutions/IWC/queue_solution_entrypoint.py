@@ -19,6 +19,9 @@ class QueueSolutionEntrypoint:
     def size(self) -> int:
         return self._queue.size
 
+    def age(self) -> int:
+        return self._queue.age
+
     def purge(self) -> bool:
         return self._queue.purge()
 

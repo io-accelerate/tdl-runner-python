@@ -77,6 +77,7 @@ runner = QueueBasedImplementationRunnerBuilder()\
     .with_solution_for('dequeue', entry_point_mapping.dequeue) \
     .with_solution_for('size', entry_point_mapping.size) \
     .with_solution_for('purge', entry_point_mapping.purge) \
+    .with_solution_for('age', entry_point_mapping.age) \
     .create()
 
 ChallengeSession\
